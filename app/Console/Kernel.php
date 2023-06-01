@@ -26,8 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('notify:purchase-date')
-        ->everyMinute();
-        //->dailyAt('08:58');
+        // ->everyMinute();
+        ->dailyAt('08:58');
     }
 
     /**

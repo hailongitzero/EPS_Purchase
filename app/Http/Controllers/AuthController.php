@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Main\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -31,11 +30,6 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        if(DB::connection()->getDatabaseName()){
-            var_dump( "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName());
-        }else{
-            var_dump("Could not find the database. Please check your configuration.");
-        }
         if (Auth::attempt([
             'email' => $request->input('email'), 
             'password' => $request->input('password'),

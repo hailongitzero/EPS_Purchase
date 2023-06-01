@@ -40,11 +40,8 @@ use Illuminate\Http\Request as HttpRequest;
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 
 Route::middleware('loggedin')->group(function() {
-    // Route::get('register', [AuthController::class, 'registerView'])->name('register.view');
-    // Route::post('register', [AuthController::class, 'register'])->name('register');
     Route::get('login', [AuthController::class, 'loginView'])->name('login.view');
-    Route::post('login', [AuthController::class, 'attemptLogin'])->name('login');
-    Route::get('test-login', [LoginController::class, 'attemptLogin'])->name('login.test');
+    Route::post('login', [AuthController::class, 'login'])->name('login');
     Route::get('/forgot-password', [ResetPasswordController::class, 'forgotPassword'])->middleware('guest')->name('password.request');
     Route::post('/forgot-password', [ResetPasswordController::class, 'sendRequest'])->middleware('guest')->name('password.email');
     Route::get('/reset-password/{token}', [ResetPasswordController::class, 'resetPassword'])->middleware('guest')->name('password.reset.view');

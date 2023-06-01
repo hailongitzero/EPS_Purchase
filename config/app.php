@@ -175,8 +175,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Adldap\Laravel\AdldapServiceProvider::class,
-        Adldap\Laravel\AdldapAuthServiceProvider::class,
+        // Adldap\Laravel\AdldapServiceProvider::class,
+        // Adldap\Laravel\AdldapAuthServiceProvider::class,
 
     ],
 
@@ -231,7 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Hp' => App\Helper::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        'Adldap' => Adldap\Laravel\Facades\Adldap::class
+        // 'Adldap' => Adldap\Laravel\Facades\Adldap::class
 
     ],
 
