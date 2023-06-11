@@ -198,6 +198,14 @@ import { format } from "./form-component";
                             cash('.my_request .'+item.id).text('');
                             cash('.my_request .'+item.id).closest('.scope').addClass('hidden');
                         }
+                    } else if ( item.type == "number") {
+                        if ( meaning ){
+                            cash('.my_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.my_request .'+item.id).closest('.scope').removeClass('hidden');
+                        } else {
+                            cash('.my_request .'+item.id).text('');
+                            cash('.my_request .'+item.id).closest('.scope').addClass('hidden');
+                        }
                     } else if (item.type == "date") {
                         if ( meaning ){
                             cash('.my_request .'+item.id).text(dayjs(meaning).format('DD-MM-YYYY'));

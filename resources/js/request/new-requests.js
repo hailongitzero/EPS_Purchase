@@ -183,6 +183,14 @@ import Velocity from "velocity-animate";
                         } else {
                             cash('.new_requests .'+item.id).closest('.scope').addClass('hidden');
                         }
+                    } else if ( item.type == "number") {
+                        if ( meaning ){
+                            cash('.new_requests .'+item.id).text(meaning.toLocaleString());
+                            cash('.new_requests .'+item.id).closest('.scope').removeClass('hidden');
+                        } else {
+                            cash('.new_requests .'+item.id).text('');
+                            cash('.new_requests .'+item.id).closest('.scope').addClass('hidden');
+                        }
                     } else if (item.type == "date") {
                         if ( meaning ){
                             cash('.new_requests .'+item.id).text(dayjs(meaning).format('DD-MM-YYYY'));

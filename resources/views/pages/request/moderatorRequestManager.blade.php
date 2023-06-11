@@ -205,19 +205,19 @@
                     <p class="txt_request_type"></p>
                 </div>
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
-                    <label class="form-label font-medium">Nguồn phí dự tính</label>
+                    <label class="form-label font-medium">Nguồn vốn được duyệt</label>
                     <p class="txt_resource"></p>
                 </div>
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
-                    <label class="form-label font-medium">Chi phí dự tính</label>
+                    <label class="form-label font-medium">Chi phí được duyệt</label>
                     <p class="txt_cost"></p>
                 </div>
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
-                    <label class="form-label font-medium">Nguồn phí</label>
+                    <label class="form-label font-medium">Nguồn vốn thực tế</label>
                     <p class="txt_final_resource"></p>
                 </div>
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
-                    <label class="form-label font-medium">Chi phí</label>
+                    <label class="form-label font-medium">Chi phí thực tế</label>
                     <p class="txt_final_cost"></p>
                 </div>
                 <div class="col-span-12 scope border-b border-gray-200 mt-3 pb-3">
@@ -297,7 +297,7 @@
                     <p class="txt_request_type"></p>
                 </div>
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
-                    <label class="form-label font-medium">Nguồn phí</label>
+                    <label class="form-label font-medium">Nguồn vốn</label>
                     <p class="txt_resource"></p>
                 </div>
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
@@ -406,7 +406,7 @@
                     <p class="txt_extend_dt"></p>
                 </div>
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
-                    <label class="form-label font-medium">Nguồn phí</label>
+                    <label class="form-label font-medium">Nguồn vốn</label>
                     <p class="txt_resource"></p>
                 </div>
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
@@ -492,6 +492,22 @@
                 <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
                     <label class="form-label font-medium">Loại yêu cầu</label>
                     <p class="txt_request_type"></p>
+                </div>
+                <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
+                    <label class="form-label font-medium">Nguồn vốn được duyệt</label>
+                    <p class="txt_resource"></p>
+                </div>
+                <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
+                    <label class="form-label font-medium">Chi phí được duyệt</label>
+                    <p class="txt_cost"></p>
+                </div>
+                <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
+                    <label class="form-label font-medium">Nguồn vốn thực tế</label>
+                    <p class="txt_final_resource"></p>
+                </div>
+                <div class="col-span-12 xxl:col-span-6 border-b border-gray-200 mt-3 pb-3">
+                    <label class="form-label font-medium">Chi phí thực tế</label>
+                    <p class="txt_final_cost"></p>
                 </div>
                 <div class="col-span-12 scope border-b border-gray-200 mt-3 pb-3">
                     <label class="form-label font-medium">Cc mail</label>

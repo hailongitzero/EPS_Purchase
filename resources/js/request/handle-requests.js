@@ -235,6 +235,14 @@ import { format } from "./form-component";
                             cash('.handle_request .'+item.id).text('');
                             cash('.handle_request .'+item.id).closest('.scope').addClass('hidden');
                         }
+                    } else if ( item.type == "number") {
+                        if ( meaning ){
+                            cash('.handle_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.handle_request .'+item.id).closest('.scope').removeClass('hidden');
+                        } else {
+                            cash('.handle_request .'+item.id).text('');
+                            cash('.handle_request .'+item.id).closest('.scope').addClass('hidden');
+                        }
                     } else if (item.type == "date") {
                         if ( meaning ){
                             cash('.handle_request .'+item.id).text(dayjs(meaning).format('DD-MM-YYYY'));

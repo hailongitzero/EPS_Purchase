@@ -39,6 +39,8 @@ use Illuminate\Http\Request as HttpRequest;
 
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 
+// Route::get('test-schema', [RequestController::class, 'testSchema']);
+
 Route::middleware('loggedin')->group(function() {
     Route::get('login', [AuthController::class, 'loginView'])->name('login.view');
     Route::post('login', [AuthController::class, 'login'])->name('login');

@@ -196,6 +196,14 @@ import { tan } from 'color-name';
                             cash('.all_request .'+item.id).text('');
                             cash('.all_request .'+item.id).closest('.scope').addClass('hidden');
                         }
+                    } else if ( item.type == "number") {
+                        if ( meaning ){
+                            cash('.all_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.all_request .'+item.id).closest('.scope').removeClass('hidden');
+                        } else {
+                            cash('.all_request .'+item.id).text('');
+                            cash('.all_request .'+item.id).closest('.scope').addClass('hidden');
+                        }
                     } else if (item.type == "date") {
                         if ( meaning ){
                             cash('.all_request .'+item.id).text(dayjs(meaning).format('DD-MM-YYYY'));

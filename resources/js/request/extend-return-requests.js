@@ -200,6 +200,14 @@ import tail from "tail.select";
                             cash('.extend_return_request .'+item.id).text('');
                             cash('.extend_return_request .'+item.id).closest('.scope').addClass('hidden');
                         }
+                    } else if ( item.type == "number") {
+                        if ( meaning ){
+                            cash('.extend_return_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.extend_return_request .'+item.id).closest('.scope').removeClass('hidden');
+                        } else {
+                            cash('.extend_return_request .'+item.id).text('');
+                            cash('.extend_return_request .'+item.id).closest('.scope').addClass('hidden');
+                        }
                     } else if (item.type == "date") {
                         if ( meaning ){
                             cash('.extend_return_request .'+item.id).text(dayjs(meaning).format('DD-MM-YYYY'));

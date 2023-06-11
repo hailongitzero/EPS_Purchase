@@ -120,7 +120,7 @@ export const format = [
     },
     {
         id: 'txt_cost',
-        type: 'text',
+        type: 'number',
         field: 'cost',
         check: false,
         has_sub: false
@@ -138,7 +138,7 @@ export const format = [
     },
     {
         id: 'txt_final_cost',
-        type: 'text',
+        type: 'number',
         field: 'final_cost',
         check: false,
         has_sub: false

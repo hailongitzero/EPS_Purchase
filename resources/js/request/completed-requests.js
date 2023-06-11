@@ -197,6 +197,14 @@ import { format } from "./form-component";
                             cash('.completed_request .'+item.id).text('');
                             cash('.completed_request .'+item.id).closest('.scope').addClass('hidden');
                         }
+                    } else if ( item.type == "number") {
+                        if ( meaning ){
+                            cash('.completed_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.completed_request .'+item.id).closest('.scope').removeClass('hidden');
+                        } else {
+                            cash('.completed_request .'+item.id).text('');
+                            cash('.completed_request .'+item.id).closest('.scope').addClass('hidden');
+                        }
                     } else if (item.type == "date") {
                         if ( meaning ){
                             cash('.completed_request .'+item.id).text(dayjs(meaning).format('DD-MM-YYYY'));
