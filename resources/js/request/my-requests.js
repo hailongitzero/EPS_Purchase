@@ -200,7 +200,7 @@ import { format } from "./form-component";
                         }
                     } else if ( item.type == "number") {
                         if ( meaning ){
-                            cash('.my_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.my_request .'+item.id).text(meaning.toLocaleString("de-DE"));
                             cash('.my_request .'+item.id).closest('.scope').removeClass('hidden');
                         } else {
                             cash('.my_request .'+item.id).text('');

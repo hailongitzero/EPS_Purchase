@@ -191,7 +191,7 @@ import { format } from "./form-component";
                         }
                     } else if ( item.type == "number") {
                         if ( meaning ){
-                            cash('.handling_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.handling_request .'+item.id).text(meaning.toLocaleString("de-DE"));
                             cash('.handling_request .'+item.id).closest('.scope').removeClass('hidden');
                         } else {
                             cash('.handling_request .'+item.id).text('');

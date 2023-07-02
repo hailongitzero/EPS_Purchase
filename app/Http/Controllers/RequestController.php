@@ -164,12 +164,12 @@ class RequestController extends Controller
         return response($requests, 200)->header('Content-Type', 'application/json');
     }
 
-    public function testSchema(Request $request){
-        $allRemaimData = MdRequest::with('requester', 'handler')
-        ->where('status', '=', Utils::DANG_XU_LY)
-        ->where('complete_date', '>=', date('Y-m-d', strtotime('-3 days', strtotime(date('Y-m-d')))))
-        ->orderBY('handler_id')
-        ->get();
-            dd($allRemaimData);
-    }
+    // public function testSchema(Request $request){
+    //     $allRemaimData = MdRequest::with('requester', 'handler')
+    //     ->where('status', '=', Utils::DANG_XU_LY)
+    //     ->where('complete_date', '>=', date('Y-m-d', strtotime('-3 days', strtotime(date('Y-m-d')))))
+    //     ->orderBY('handler_id')
+    //     ->get();
+    //         dd($allRemaimData);
+    // }
 }

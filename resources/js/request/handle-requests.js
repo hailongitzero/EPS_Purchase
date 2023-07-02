@@ -237,7 +237,7 @@ import { format } from "./form-component";
                         }
                     } else if ( item.type == "number") {
                         if ( meaning ){
-                            cash('.handle_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.handle_request .'+item.id).text(meaning.toLocaleString("de-DE"));
                             cash('.handle_request .'+item.id).closest('.scope').removeClass('hidden');
                         } else {
                             cash('.handle_request .'+item.id).text('');

@@ -11,6 +11,9 @@
         <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Nguồn vốn thực tế</th>
         <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Loại yêu cầu</th>
         <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Trạng thái</th>
+        <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Người tạo</th>
+        <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Số điện thoại</th>
+        <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Phòng ban</th>
         <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Người xử lý</th>
         <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Ngày tạo</th>
         <th style="border:1px solid #000; font-size: 16px; font-weight: bold; background-color:aqua;">Ngày hoàn thành</th>
@@ -33,6 +36,9 @@
               ($request->status == 'D' ? 'Đang xử lý' : 
               ($request->status == 'E' ? 'Chuyển xử lý' : 
               ($request->status == 'F' ? 'Hoàn thành' : 'Từ chối'))))) }}</td>
+            <td style="border:1px solid #000;">{{ $request->requester->name }}</td>
+            <td style="border:1px solid #000;">{{ $request->requester->telephone }}</td>
+            <td style="border:1px solid #000;">{{ $request->department->department_name }}</td>
             <td style="border:1px solid #000;">{{ $request->handler != null ? $request->handler->name : "" }}</td>
             <td style="border:1px solid #000;">{{ $request->created_at }}</td>
             <td style="border:1px solid #000;">{{ $request->complete_date }}</td>

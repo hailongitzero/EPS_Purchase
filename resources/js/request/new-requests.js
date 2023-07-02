@@ -185,7 +185,7 @@ import Velocity from "velocity-animate";
                         }
                     } else if ( item.type == "number") {
                         if ( meaning ){
-                            cash('.new_requests .'+item.id).text(meaning.toLocaleString());
+                            cash('.new_requests .'+item.id).text(meaning.toLocaleString("de-DE"));
                             cash('.new_requests .'+item.id).closest('.scope').removeClass('hidden');
                         } else {
                             cash('.new_requests .'+item.id).text('');

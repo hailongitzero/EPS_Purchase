@@ -63,6 +63,7 @@ import "./font-awesome";
  import "./request/extend-return-requests";
  import "./request/my-requests";
  import "./request/handle-requests";
+ import "./common";
 
  /*
  |--------------------------------------------------------------------------

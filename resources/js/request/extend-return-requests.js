@@ -202,7 +202,7 @@ import tail from "tail.select";
                         }
                     } else if ( item.type == "number") {
                         if ( meaning ){
-                            cash('.extend_return_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.extend_return_request .'+item.id).text(meaning.toLocaleString("de-DE"));
                             cash('.extend_return_request .'+item.id).closest('.scope').removeClass('hidden');
                         } else {
                             cash('.extend_return_request .'+item.id).text('');

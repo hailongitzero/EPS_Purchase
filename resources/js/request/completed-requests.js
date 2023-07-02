@@ -199,7 +199,7 @@ import { format } from "./form-component";
                         }
                     } else if ( item.type == "number") {
                         if ( meaning ){
-                            cash('.completed_request .'+item.id).text(meaning.toLocaleString());
+                            cash('.completed_request .'+item.id).text(meaning.toLocaleString("de-DE"));
                             cash('.completed_request .'+item.id).closest('.scope').removeClass('hidden');
                         } else {
                             cash('.completed_request .'+item.id).text('');

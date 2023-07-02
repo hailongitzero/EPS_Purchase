@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="form-control col-span-12 sm:col-span-6 lg:col-span-3">
                                         <label for="cost" class="form-label">Chi phí</label>
-                                        <input id="cost" name="cost" type="number" class="form-control">
+                                        <input id="cost" name="cost" type="text" class="form-control currency-mask">
                                     </div>
                                     <div class="form-control col-span-12">
                                         <label for="subject" class="form-label">Tiêu đề</label>
