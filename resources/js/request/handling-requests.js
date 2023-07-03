@@ -176,6 +176,9 @@ import { format } from "./form-component";
                         if ( data[field] ){
                             meaning = data[field][subField];
                             value = data[field][subValue];
+                        } else {
+                            meaning = null;
+                            value = null;
                         }
                     } else {
                         meaning = data[field];

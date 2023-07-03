@@ -170,6 +170,9 @@ import Velocity from "velocity-animate";
                         if ( data[field] ){
                             meaning = data[field][subField];
                             value = data[field][subValue];
+                        } else {
+                            meaning = null;
+                            value = null;
                         }
                     } else {
                         meaning = data[field];

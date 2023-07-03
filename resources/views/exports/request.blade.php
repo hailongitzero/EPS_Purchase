@@ -1,4 +1,3 @@
-
 <table style="border:1px solid #000;">
     <thead>
     <tr>
@@ -22,7 +21,7 @@
     <tbody style="border:1px solid">
     @foreach($requests as $request)
         <tr>
-            <td style="border:1px solid #000;">{{ $request->subject }}</td>
+            <td style="border:1px solid #000;">{{ str_replace("&", "_", $request->subject); }}</td>
             <td style="border:1px solid #000;">{!! $request->content !!}</td>
             <td style="border:1px solid #000;">{{ $request->priority == 'L' ? 'Thấp' : ($request->priority == 'M' ? 'Vừa' : 'Cao') }}</td>
             <td style="border:1px solid #000;">{{ $request->cost }}</td>

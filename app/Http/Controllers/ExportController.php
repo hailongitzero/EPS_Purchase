@@ -16,6 +16,6 @@ class ExportController extends Controller
     public function ExportRequest(Request $request)
     {
         $params = $request->all();
-        return Excel::download(new RequestExport, 'ycms.xlsx');
+        return Excel::download(new RequestCollection, 'ycms.xlsx');
     }
 }
