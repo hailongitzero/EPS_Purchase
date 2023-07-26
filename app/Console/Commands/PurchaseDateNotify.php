@@ -58,11 +58,13 @@ class PurchaseDateNotify extends Command
 
         $manager = User::where('role', Utils::QUAN_LY)->get();
         if ($allRemaimData->count() > 0) {
-            Notification::send($manager, new PurchaseDateMail($allRemaimData));
+            $receipients = $manager->pluck('name', 'email');
+            Notification::route('email', $receipients)->notify(new PurchaseDateMail($allRemaimData));
         }
         if($allRemaimHandle->count() > 0){
             foreach($allRemaimHandle as $item) {
-                Notification::send($item->handler, new PurchaseDateMail($item));
+                $receipients = $item->handler->pluck('name', 'email');
+                Notification::route('email', $receipients)->notify(new PurchaseDateMail($item));
             }
         }
 

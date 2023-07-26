@@ -27,12 +27,15 @@ class SendEmailController extends Controller
         $sub_handler = $mdRequest->sub_handler;
         try{
             if ($handler) {
-                Notification::send($handler, new AssignRequest($mdRequest));
+                $receipients = $handler->pluck('name', 'email');
+                Notification::route('email', $receipients)->notify(new AssignRequest($mdRequest));
             }
             if ($sub_handler){
-                Notification::send($sub_handler, new AssignRequest($mdRequest));
+                $receipients = $sub_handler->pluck('name', 'email');
+                Notification::route('email', $receipients)->notify(new AssignRequest($mdRequest));
             }
-            Notification::send($mdRequest->requester, new AssignRequestInform($mdRequest));
+            $receipients = $mdRequest->requester->pluck('name', 'email');
+            Notification::route('email', $receipients)->notify(new AssignRequestInform($mdRequest));
         } catch (Exception $e){}
     }
 
@@ -42,10 +45,12 @@ class SendEmailController extends Controller
     public static function completeMail($mdRequest){
         $mdCompleteRequest = MdRequest::with('department','requester','assign','handler','files','type','sub_handler.user')->where('request_id', $mdRequest->request_id)->first();
         try{
-            Notification::send($mdCompleteRequest->requester, new completeRequest($mdCompleteRequest, '/my-requests?tab=my-req-tab&id='.$mdCompleteRequest->request_id));
+            $receipients = $mdCompleteRequest->requester->pluck('name', 'email');
+            Notification::route('email', $receipients)->notify(new completeRequest($mdCompleteRequest, '/my-requests?tab=my-req-tab&id='.$mdCompleteRequest->request_id));
             if ( Auth::user()->role == Utils::PHO_QUAN_LY ) {
                 $admin = User::where('role', Utils::QUAN_LY)->get();
-                Notification::send($admin, new completeRequest($mdCompleteRequest, '/dministrator?tab=completed-req-tab&id='.$mdCompleteRequest->request_id));
+                $receipients = $admin->pluck('name', 'email');
+                Notification::route('email', $receipients)->notify(new completeRequest($mdCompleteRequest, '/dministrator?tab=completed-req-tab&id='.$mdCompleteRequest->request_id));
             }
         } catch (Exception $e) {}
     }
@@ -57,7 +62,8 @@ class SendEmailController extends Controller
         $mdReturnRequest = MdRequest::with('department','requester','assign','handler','files','type','sub_handler.user')->where('request_id', $mdRequest->request_id)->first();
         try{
             $admin = User::where('role', Utils::QUAN_LY)->get();
-            Notification::send($admin, new returnRequest($mdReturnRequest));
+            $receipients = $admin->pluck('name', 'email');
+            Notification::route('email', $receipients)->notify(new returnRequest($mdReturnRequest));
         } catch (Exception $e) {}
     }
 
@@ -68,7 +74,8 @@ class SendEmailController extends Controller
         $mdExtendRequest = MdRequest::with('department','requester','assign','handler','files','type','sub_handler.user')->where('request_id', $mdRequest->request_id)->first();
         try{
             $admin = User::where('role', Utils::QUAN_LY)->get();
-            Notification::send($admin, new extendRequest($mdExtendRequest));
+            $receipients = $admin->pluck('name', 'email');
+            Notification::route('email', $receipients)->notify(new extendRequest($mdExtendRequest));
         } catch (Exception $e) {}
     }
 
@@ -79,7 +86,8 @@ class SendEmailController extends Controller
         $mdExtendRequest = MdRequest::with('department','requester','assign','handler','files','type','sub_handler.user')->where('request_id', $mdRequest->request_id)->first();
         try{
             $handler = $mdExtendRequest->handler();
-            Notification::send($handler, new extendRequestResult($mdExtendRequest));
+            $receipients = $handler->pluck('name', 'email');
+            Notification::route('email', $receipients)->notify(new extendRequestResult($mdExtendRequest));
         } catch (Exception $e) {}
     }
 }

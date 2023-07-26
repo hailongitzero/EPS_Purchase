@@ -49,8 +49,13 @@ class RequestController extends Controller
                 // try{
                     $mailData = MdRequest::with('department','requester','handler','files','type','sub_handler')->find($newRequest->request_id);
                     $manager = User::where('role', Utils::QUAN_LY)->get();
-                    Notification::send($manager, new NewRequest($mailData));
-                // } catch (Exception $e) {}
+                    $receipients = $manager->pluck('name', 'email');
+                    //dd($receipients);
+                    // Notification::send($receipients, new NewRequest($mailData));
+                    Notification::route('email', $receipients)->notify(new NewRequest($mailData));
+                // } catch (Exception $e) {
+                //     dd($e);
+                // }
                 
             } else {
                 DB::rollBack();
